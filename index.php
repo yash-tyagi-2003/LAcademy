@@ -133,7 +133,12 @@
                         }else if ($_GET['error']=="nomatch"){
                           echo '<div style="color:red;">There\'s no match for your email !</div>';
 
-                      }elseif (isset($_GET['login']) ) {
+                      }
+                      else if($_GET['error']=="blocked")
+                      {
+                        echo '<div style="color:red;">Your account has been blocked!!! Please contact Admin</div>';
+                      }
+                      elseif (isset($_GET['login']) ) {
                         if ($_GET['signup']=="success")
                           echo '<div style="color:green;">Sign in Successful !</div>';
                       }
